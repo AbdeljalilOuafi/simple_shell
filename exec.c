@@ -1,0 +1,79 @@
+#include "main.h"
+
+/**
+ * start_process - execution of a new process
+ * @d: input data structure
+ * Return: void
+ */
+
+void start_process(data *d)
+{
+	pid_t child_pid = fork();
+	int status = 0;
+
+	if (child_pid == -1)
+		goto free;
+	if (child_pid == 0 && execve(d->av[0], d->av, NULL) == -1)
+		goto free;
+	else if (wait(&status) == -1)
+		goto free;
+	return;
+free:
+	perror(d->shell_name);
+	free_array(d->av);
+	free(d->cmd);
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * handler_sigint - function that handles
+ * the SIGINT signal.
+ * @signal: the int input
+ * Return: void
+ */
+
+void handler_sigint(int signal)
+{
+	const char prompt[] = "\n#csisfun$ ";
+	(void)signal;
+	_printf(prompt);
+}
+
+/**
+ * _exec - executes cmd
+ * @d: input data structure
+ * Return: void
+ */
+
+void _exec(data *d)
+{
+
+	const char prompt[] = "#csisfun$ ";
+
+	signal(SIGINT, handler_sigint);
+
+	while (1)
+	{
+		_printf(prompt);
+
+		read_cmd(d);
+		if (_strlen(d->cmd) != 0)
+		{
+			split(d, " ");
+			if (!exec_builtin(d))
+			{
+				_which(d);
+				if (access(d->av[0], F_OK) == -1)
+				{
+					perror(d->shell_name);
+				}
+				else
+				{
+					start_process(d);
+				}
+			}
+		}
+		free_array(d->av);
+		free(d->cmd);
+	}
+}
