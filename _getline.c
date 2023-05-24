@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _getline_helper - function for getline helper
+ * _getline_helper - getline helper function
  * @lineptr: string input
  * @n: int input
  * Return: int
@@ -19,8 +19,8 @@ int _getline_helper(char **lineptr, size_t *n)
 }
 
 /**
- * _getline - function that read the input from FILE
- * @lineptr: the string input
+ * _getline - reads the input from FILE
+ * @lineptr: string input
  * @n: int input
  * @stream: FILE input
  * Return: ssize_t
@@ -64,3 +64,4 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 	(*lineptr)[position] = '\0';
 	return (position);
 }
+

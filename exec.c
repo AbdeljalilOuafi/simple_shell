@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * start_process - execution of a new process
- * @d: input data structure
+ * start_process - start a new process
+ * @d: data struct input
  * Return: void
  */
 
@@ -17,6 +17,8 @@ void start_process(data *d)
 		goto free;
 	else if (wait(&status) == -1)
 		goto free;
+	if (WIFEXITED(status))
+		d->last_exit_status = WEXITSTATUS(status);
 	return;
 free:
 	perror(d->shell_name);
@@ -26,35 +28,35 @@ free:
 }
 
 /**
- * handler_sigint - function that handles
- * the SIGINT signal.
- * @signal: the int input
+ * handler_sigint - Signal handler function
+ * @signal: int input
  * Return: void
  */
 
 void handler_sigint(int signal)
 {
-	const char prompt[] = "\n#csisfun$ ";
+	/*const char prompt[] = PROMPT;*/
 	(void)signal;
-	_printf(prompt);
+	exit(EXIT_FAILURE);
+	/*_printf(prompt);*/
 }
 
 /**
- * _exec - executes cmd
- * @d: input data structure
+ * _exec - exectute cmd
+ * @d: data struct input
  * Return: void
  */
 
 void _exec(data *d)
 {
-
-	const char prompt[] = "#csisfun$ ";
+	const char prompt[] = PROMPT;
 
 	signal(SIGINT, handler_sigint);
 
 	while (1)
 	{
-		_printf(prompt);
+		if (isatty(STDIN_FILENO))
+			_printf(prompt);
 
 		read_cmd(d);
 		if (_strlen(d->cmd) != 0)
@@ -72,8 +74,9 @@ void _exec(data *d)
 					start_process(d);
 				}
 			}
+			free_array(d->av);
 		}
-		free_array(d->av);
 		free(d->cmd);
 	}
 }
+
