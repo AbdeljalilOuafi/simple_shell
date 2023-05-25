@@ -29,8 +29,9 @@ char *_getenv(char *name)
 }
 
 /**
- * _which - locate the executable file associated with a given command.
- * @d: string input
+ * _which - a function that identifies the exe file
+ * associated with a given command.
+ * @d: the string input
  * Return: void
  */
 int _which(data *d)
@@ -72,10 +73,9 @@ step_out:
 }
 
 /**
- * create_new_entry - Initialize a new environment variable,
- *  or modify an existing one
- * @name: variable name
- * @value: variable value
+ * create_new_entry - Init new environment variable
+ * @name: the variable name
+ * @value: the variable value
  * Return: void
  */
 char *create_new_entry(char *name, char *value)
@@ -93,10 +93,9 @@ char *create_new_entry(char *name, char *value)
 	return (new_entry);
 }
 /**
- * _new_environ - Initialize a new environment variable,
- *  or modify an existing one
- * @name: variable name
- * @value: variable value
+ * _new_environ - Init  new environment variable
+ * @name: the variable name
+ * @value: the variable value
  * Return: void
  */
 char **_new_environ(char *name, char *value)
@@ -144,10 +143,10 @@ char **_new_environ(char *name, char *value)
 }
 
 /**
- * _setenv - Initialize a new environment variable, or modify an existing one
+ * _setenv - Init new environment variable
  * @d: to use the flag
- * @name: variable name
- * @value: variable value
+ * @name: the variable name
+ * @value: the variable value
  * Return: void
  */
 int _setenv(data *d, char *name, char *value)

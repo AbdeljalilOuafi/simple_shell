@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _strlen - return the nbr of char in str
- * @str: string input
- * Return: nbr of char in str.
+ * _strlen - function that returns the
+ * number of characters in a given string.
+ * @str: the string input
+ * Return: number of chars in the given string.
  */
 
 unsigned int _strlen(char *str)
@@ -17,16 +18,15 @@ unsigned int _strlen(char *str)
 
 
 /**
- * _strcmp - compares two strings.
- *
+ * _strcmp - function that compares two strings
+ * and returns an integer.
  * @s1: input const string
  * @s2: input const string
- *
- * Return: returns an integer indicating the result of the comparison,
- *	as follows:
- *		• 0, if the s1 and s2 are equal
- *		• a negative value if s1 is less than s2
- *		• a positive value if s1 is greater than s2
+ * Return: returns an integer indicating the result of
+ * the string comparison, with the following conventions:
+ * 0 if s1 == s2
+ * A negative value if s1 < s2
+ * A positive value if s1 > s2
  */
 int _strcmp(const char *s1, const char *s2)
 {
@@ -46,17 +46,15 @@ int _strcmp(const char *s1, const char *s2)
 }
 
 /**
- * _strncmp - compares two strings.
- *
+ * _strncmp - function that compares two strings
  * @s1: input const string
  * @s2: input const string
  * @n: input int
- *
- * Return: returns an integer indicating the result of the comparison,
- *	as follows:
- *		• 0, if the s1 and s2 are equal
- *		• a negative value if s1 is less than s2
- *		• a positive value if s1 is greater than s2
+ * Return: returns an integer indicating the result of the
+ * comparison, with the following conventions:
+ * 0 if s1 == s2
+ * A negative value if s1 < s2
+ * A positive value if s1 > s2
  */
 int _strncmp(const char *s1, const char *s2, int n)
 {
@@ -79,11 +77,10 @@ int _strncmp(const char *s1, const char *s2, int n)
 }
 
 /**
- * _strcpy - copy src to dest .
- *
+ * _strcpy - function that copies the contents of the
+ * source string to the destination string
  * @dest: input char *
  * @src: input const char *
- *
  * Return: char *
  */
 char *_strcpy(char *dest, const char *src)
@@ -99,11 +96,10 @@ char *_strcpy(char *dest, const char *src)
 }
 
 /**
- * _strcat - appends the src string to the dest string,
- *
+ * _strcat - function that appends the source
+ * string to the destination string.
  * @dest: input string
  * @src: input const string
- *
  * Return: void
  */
 char *_strcat(char *dest, const char *src)

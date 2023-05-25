@@ -1,11 +1,13 @@
 #include "main.h"
 /**
- * _strdup - returns a pointer to a newly allocated space in memory,
- * which contains a copy of the string given as a parameter.
+ * _strdup - returns a pointer to a newly
+ * allocated block in memory,
+ * containing a duplicate of the
+ * string given by as a parameter
  *
- * @str: string input
+ * @str: the string input
  *
- * Return: pointer
+ * Return: a pointer
  */
 char *_strdup(const char *str)
 {
@@ -31,8 +33,8 @@ char *_strdup(const char *str)
 
 
 /**
- * _isnumber - check if a string is a number
- * @status: string to be checked
+ * _isnumber - check for a string is a number
+ * @status: the string that is being checked
  * Return: void
  */
 int _isnumber(const char *status)
@@ -50,9 +52,10 @@ int _isnumber(const char *status)
 
 
 /**
- * _isdigit - check if charachter is number
- * @c: charachter
- * Return: 1 if its a digit 0 otherwise
+ * _isdigit - check if character is number or not
+ * @c: the character
+ * Return: 1 if the character is a digit
+ * 0 otherwise
  */
 int _isdigit(int c)
 {

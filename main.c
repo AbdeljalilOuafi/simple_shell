@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - init data
+ * main - initilize data
  * @argc: input size of @argv
  * @argv: input array of command line arguments
  * Return: Always 0.

@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _perror - print in stderr
- * @str1: name of shell program
- * @str2: message error
+ * _perror - print in std error
+ * @str1: name for the shell program
+ * @str2: the message error
  * Return: void
  */
 void _perror(const char *str1, const char *str2)
@@ -29,8 +29,9 @@ void _perror(const char *str1, const char *str2)
 
 
 /**
- * _trim - remove leading and trailing spaces and tabs from a string
- * @str: string input
+ * _trim - remove trailing white spaces
+ * and tabs from a string.
+ * @str: the string input
  * Return: void.
  */
 
@@ -52,12 +53,11 @@ void _trim(char *str)
 
 
 /**
- * _realloc - reallocates a memory block using malloc and free
- *
- * @ptr: pointer void
- * @new_size: unsigned int
- *
- * Return: the newly allocated memory
+ * _realloc - a function that reallocates
+ * memory blocks using malloc and free
+ * @ptr: a void pointez
+ * @new_size: an unsigned int
+ * Return: the new allocated memory
  */
 void *_realloc(void *ptr, unsigned int new_size)
 {

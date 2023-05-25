@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _printf - print a string to stander out put
- * @str: string input
+ * _printf - print a string to stdout
+ * @str: the string input
  * Return: void
  */
 void _printf(const char *str)
@@ -17,8 +17,9 @@ void _printf(const char *str)
 }
 
 /**
- * free_array - free an array of pointers
- * @array: array of pointers
+ * free_array - function to deallocates memory for
+ * an array of pointers
+ * @array: the array of pointers
  * Return: void
  */
 void free_array(char **array)
@@ -38,7 +39,8 @@ void free_array(char **array)
 }
 
 /**
- * split - split a given string by a delimiter
+ * split - function that divides a given
+ * string into multiple substrings
  * @d: data struct input
  * @delim: string input
  * Return: void
@@ -80,9 +82,9 @@ free:
 }
 
 /**
- * init_data - init data
+ * init_data - initilize the data
  * @d: data struct input
- * @shell_name: string input
+ * @shell_name: the string input
  * Return: void
  */
 
@@ -96,7 +98,9 @@ void init_data(data *d, const char *shell_name)
 }
 
 /**
- * read_cmd - get the commend from the prompt and structure it into data struct
+ * read_cmd - function that retrieves the command
+ * from the prompt and organizes it into
+ * a data structure.
  * @d: data struct input
  * Return: void
  */

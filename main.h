@@ -33,8 +33,8 @@ typedef struct data
 } data;
 
 /**
- * struct builtin - holds the main data.
- * @cmd: built in cmd
+ * struct builtin - a function that holds the main data
+ * @cmd: built in command line
  * @f: function of builtin cmd
  */
 typedef struct builtin
@@ -43,7 +43,7 @@ typedef struct builtin
 	void (*f)(data *d);
 } builtin;
 
-/* builtin.c */
+/* builtin.c file */
 int exec_builtin(data *d);
 void builtin_exit(data *d);
 void builtin_env(data *d);
@@ -52,29 +52,29 @@ void builtin_unsetenv(data *d);
 void builtin_cd(data *d);
 
 
-/* helpers.c */
+/* helpers.c file */
 void _printf(const char *str);
 void free_array(char **array);
 void split(data *d, const char *delim);
 void init_data(data *d, const char *shell_name);
 void read_cmd(data *d);
 
-/* helpers2.c */
+/* helpers2.c file */
 void _perror(const char *str1, const char *str2);
 void _trim(char *str);
 void *_realloc(void *ptr, unsigned int new_size);
 
-/* exec.c */
+/* exec.c file */
 void start_process(data *d);
 void handler_sigint(int sig);
 void _exec(data *d);
 
-/* path.c */
+/* path.c file */
 char *_getenv(char *name);
 int _which(data *d);
 int _setenv(data *d, char *name, char *value);
 
-/* string_utils.c */
+/* string_utils.c file */
 unsigned int _strlen(char *str);
 int _strcmp(const char *s1, const char *s2);
 int _strncmp(const char *s1, const char *s2, int n);
@@ -82,12 +82,12 @@ char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, const char *src);
 
 
-/* string_utils2.c */
+/* string_utils2.c file */
 char *_strdup(const char *str);
 int _isnumber(const char *status);
 int _isdigit(int c);
 
-/* _getline.c */
+/* _getline.c file */
 #define READ_BUF_SIZE 1024
 
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);

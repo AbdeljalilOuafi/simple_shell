@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * start_process - start a new process
- * @d: data struct input
+ * start_process - execution of a new process
+ * @d: input data structure
  * Return: void
  */
 
@@ -28,8 +28,9 @@ free:
 }
 
 /**
- * handler_sigint - Signal handler function
- * @signal: int input
+ * handler_sigint - function that handles
+ * the SIGINT signal.
+ * @signal: the int input
  * Return: void
  */
 
@@ -42,8 +43,8 @@ void handler_sigint(int signal)
 }
 
 /**
- * _exec - exectute cmd
- * @d: data struct input
+ * _exec - executes cmd
+ * @d: the data struct input
  * Return: void
  */
 
